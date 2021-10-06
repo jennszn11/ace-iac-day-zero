@@ -67,9 +67,9 @@ resource "azurerm_network_security_rule" "icmp" {
   name                        = "icmp"
   priority                    = 120
   protocol                    = "Icmp"
-  source_port_range           = "68.40.168.230"
+  source_port_range           = "*"
   description                 = "Jenn's IP ICMP Access"
-  source_address_prefix       = "*"
+  source_address_prefix       = "68.40.168.230"
   destination_port_range      = "*"
   destination_address_prefix  = "*"
   resource_group_name         = module.azure_spoke_2.vnet.resource_group
